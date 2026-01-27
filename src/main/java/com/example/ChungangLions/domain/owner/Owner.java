@@ -1,5 +1,6 @@
 package com.example.ChungangLions.domain.owner;
 
+import com.example.ChungangLions.domain.user.User;
 import com.example.ChungangLions.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -24,6 +25,7 @@ public class Owner extends BaseTimeEntity {
     private String photo;
 
     // 업종
+    @Enumerated(EnumType.STRING)
     private Type type;
 
     // 주소
@@ -39,6 +41,7 @@ public class Owner extends BaseTimeEntity {
     private List<BusinessDay> businessDay;
 
     // 제휴 유형
+    @Enumerated(EnumType.STRING)
     private PartnershipType partnershipType;
 
     // 제휴 조건

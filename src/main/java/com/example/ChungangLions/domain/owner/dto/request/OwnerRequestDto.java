@@ -4,6 +4,7 @@ import com.example.ChungangLions.domain.owner.BusinessDay;
 import com.example.ChungangLions.domain.owner.Owner;
 import com.example.ChungangLions.domain.owner.PartnershipType;
 import com.example.ChungangLions.domain.owner.Type;
+import com.example.ChungangLions.domain.user.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class OwnerRequestDto {
+    private Long userId;
     private String photo;
     private Type type;
     private String location;
@@ -25,8 +27,9 @@ public class OwnerRequestDto {
     private LocalDate partnershipStartDate;
     private LocalDate partnershipEndDate;
 
-    public Owner toEntity(){
+    public Owner toEntity(User user){
         return Owner.builder()
+                .user(user)
                 .photo(this.photo)
                 .type(this.type)
                 .location(this.location)

@@ -32,7 +32,17 @@ public class OwnerResponseDto {
                 .id(owner.getId())
                 .userId(owner.getUser().getId())
                 .photo(owner.getPhoto())
-                .
+                .type(owner.getType())
+                .location(owner.getLocation())
+                .comment(owner.getComment())
+                .contact(owner.getContact())
+                .businessDay(owner.getBusinessDay())
+                .partnershipType(owner.getPartnershipType())
+                .partnershipCondition(owner.getPartnershipCondition())
+                .partnershipCondition(owner.getPartnershipCondition())
+                .partnershipStartDate(owner.getPartnershipStartDate())
+                .partnershipEndDate(owner.getPartnershipEndDate())
+                .build();
 
     }
 }
