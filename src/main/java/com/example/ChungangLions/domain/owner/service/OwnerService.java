@@ -29,4 +29,15 @@ public class OwnerService {
         OwnerResponseDto response = OwnerResponseDto.fromEntity(saved);
         return response;
     }
+    
+    // 프로필 수정
+    @Transactional
+    public OwnerResponseDto updateOwner(Long id, OwnerRequestDto dto){
+        Owner owner = ownerRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 프로필입니다."));
+        owner.update(dto);
+        Owner updated = ownerRepository.save(owner);
+        OwnerResponseDto response = OwnerResponseDto.fromEntity(updated);
+        return response;
+    }
 }
