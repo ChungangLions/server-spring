@@ -1,5 +1,6 @@
 package com.example.ChungangLions.domain.owner;
 
+import com.example.ChungangLions.domain.owner.dto.request.OwnerRequestDto;
 import com.example.ChungangLions.domain.user.User;
 import com.example.ChungangLions.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
@@ -54,4 +55,17 @@ public class Owner extends BaseTimeEntity {
     private LocalDate partnershipStartDate;
     private LocalDate partnershipEndDate;
 
+    public void update(OwnerRequestDto dto) {
+        if (dto.getPhoto() != null) this.photo = dto.getPhoto();
+        if (dto.getType() != null) this.type = dto.getType();
+        if (dto.getLocation() != null) this.location = dto.getLocation();
+        if (dto.getComment() != null) this.comment = dto.getComment();
+        if (dto.getContact() != null) this.contact = dto.getContact();
+        if (dto.getBusinessDay() != null) this.businessDay = dto.getBusinessDay();
+        if (dto.getPartnershipType() != null) this.partnershipType = dto.getPartnershipType();
+        if (dto.getPartnershipCondition() != null) this.partnershipCondition = dto.getPartnershipCondition();
+        if (dto.getPartnershipContents() != null) this.partnershipContents = dto.getPartnershipContents();
+        if (dto.getPartnershipStartDate() != null) this.partnershipStartDate = dto.getPartnershipStartDate();
+        if (dto.getPartnershipEndDate() != null) this.partnershipEndDate = dto.getPartnershipEndDate();
+    }
 }
